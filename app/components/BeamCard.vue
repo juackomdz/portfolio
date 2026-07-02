@@ -13,6 +13,9 @@
                 </div>
             </div>
         </UiCardContent>
+        <UiCardFooter>
+            <span>asdasd</span>
+        </UiCardFooter>
         <UiBorderBeam :duration="6" :size="400" class="from-transparent via-red-500 to-transparent" />
         <UiBorderBeam :size="400" :delay="3" :duration="6" class="from-transparent via-blue-500 to-transparent" />
     </UiCard>
