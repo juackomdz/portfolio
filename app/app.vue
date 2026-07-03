@@ -5,11 +5,18 @@
     <Hero />
     <DocsTerminal class="mb-3" />
     <SeparatorHero texto="Proyectos" />
-    <Motion initial="initial" while-in-view="animate" :variants="rootVariant">
-      <Motion v-for="(item, index) in projects" :key="item.title" :variants="childVariant" class="mb-8">
-        <CardProyectos v-bind="item" />
+    <section>
+      <Motion initial="initial" while-in-view="animate" :variants="rootVariant">
+        <Motion
+          v-for="(item, index) in projects"
+          :key="item.title"
+          :variants="childVariant"
+          class="mb-8"
+        >
+          <CardProyectos v-bind="item" />
+        </Motion>
       </Motion>
-    </Motion>
+    </section>
     <Footer />
   </div>
 </template>
@@ -43,7 +50,8 @@ const childVariant: MotionProps["variants"] = {
 
 const projects = [
   {
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1531973576160-7125cd663d86?q=80&w=600&h=400&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Warehouse inventory management",
     headline: "Offline-Attendance",
     title: "Asistencia Offline.",
@@ -53,14 +61,14 @@ const projects = [
     link: "https://offline-attendance.vercel.app",
   },
   {
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    image:
+      "https://plus.unsplash.com/premium_photo-1718090611249-112127bf716b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Loteria",
     headline: "Loteria",
     title: "Loteria.",
-    description:
-      "Juego de loteria web con validaciones.",
+    description: "Juego de loteria web con validaciones.",
     tags: ["Vue", "TypeScript", "Shadcn UI"],
-    link: "https://offline-attendance.vercel.app",
+    link: "https://loteria-azure-sigma.vercel.app",
   },
 ];
 

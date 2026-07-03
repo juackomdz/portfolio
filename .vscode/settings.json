@@ -6,11 +6,7 @@
   "files.associations": {
     "*.css": "tailwindcss"
   },
-  "tailwindCSS.classFunctions": [
-    "tw",
-    "clsx",
-    "tw\\.[a-z-]+"
-  ],
+  "tailwindCSS.classFunctions": ["tw", "clsx", "tw\\.[a-z-]+"],
   "tailwindCSS.experimental.classRegex": [
     [
       "\\btv\\(\\s*((?:\"(?:\\\\.|[^\"\\\\])*\"|'(?:\\\\.|[^'\\\\])*'|`(?:\\\\.|[^`\\\\])*`|[^)]*)*)\\)",

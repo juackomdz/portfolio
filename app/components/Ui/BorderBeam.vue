@@ -31,47 +31,47 @@
 </template>
 
 <script lang="ts">
-  import { motion } from "motion-v";
-  import type { MotionStyle, Transition } from "motion-v";
-  import { normalizeClass } from "vue";
-  import type { CSSProperties, HTMLAttributes } from "vue";
+import { motion } from "motion-v";
+import type { MotionStyle, Transition } from "motion-v";
+import { normalizeClass } from "vue";
+import type { CSSProperties, HTMLAttributes } from "vue";
 
-  interface BorderBeamProps {
-    /** The size of the border beam. */
-    size?: number;
-    /** The duration of the border beam. */
-    duration?: number;
-    /** The delay of the border beam. */
-    delay?: number;
-    /** The color of the border beam from. */
-    colorFrom?: string;
-    /** The color of the border beam to. */
-    colorTo?: string;
-    /** The motion transition of the border beam. */
-    transition?: Transition;
-    /** The class name of the border beam. */
-    class?: HTMLAttributes["class"];
-    /** The style of the border beam. */
-    style?: CSSProperties;
-    /** Whether to reverse the animation direction. */
-    reverse?: boolean;
-    /** The initial offset position (0-100). */
-    initialOffset?: number;
-  }
+interface BorderBeamProps {
+  /** The size of the border beam. */
+  size?: number;
+  /** The duration of the border beam. */
+  duration?: number;
+  /** The delay of the border beam. */
+  delay?: number;
+  /** The color of the border beam from. */
+  colorFrom?: string;
+  /** The color of the border beam to. */
+  colorTo?: string;
+  /** The motion transition of the border beam. */
+  transition?: Transition;
+  /** The class name of the border beam. */
+  class?: HTMLAttributes["class"];
+  /** The style of the border beam. */
+  style?: CSSProperties;
+  /** Whether to reverse the animation direction. */
+  reverse?: boolean;
+  /** The initial offset position (0-100). */
+  initialOffset?: number;
+}
 </script>
 
 <script lang="ts" setup>
-  const props = withDefaults(defineProps<BorderBeamProps>(), {
-    size: 50,
-    delay: 0,
-    duration: 6,
-    colorFrom: "#ffaa40",
-    colorTo: "#9c40ff",
-    reverse: false,
-    initialOffset: 0,
-  });
+const props = withDefaults(defineProps<BorderBeamProps>(), {
+  size: 50,
+  delay: 0,
+  duration: 6,
+  colorFrom: "#ffaa40",
+  colorTo: "#9c40ff",
+  reverse: false,
+  initialOffset: 0,
+});
 
-  const styles = tv({
-    base: "absolute aspect-square bg-linear-to-l from-(--color-from) via-(--color-to) to-transparent",
-  });
+const styles = tv({
+  base: "absolute aspect-square bg-linear-to-l from-(--color-from) via-(--color-to) to-transparent",
+});
 </script>

@@ -31,28 +31,28 @@
 </template>
 
 <script lang="ts" setup>
-  import { Primitive } from "reka-ui";
-  import type { PrimitiveProps } from "reka-ui";
-  import { normalizeClass } from "vue";
-  import type { HTMLAttributes } from "vue";
+import { Primitive } from "reka-ui";
+import type { PrimitiveProps } from "reka-ui";
+import { normalizeClass } from "vue";
+import type { HTMLAttributes } from "vue";
 
-  const props = withDefaults(
-    defineProps<
-      PrimitiveProps & {
-        /** Title that should be displayed. Passed to the `CardTitle` component. */
-        title?: string;
-        /** Description that should be displayed. Passed to the `CardDescription` component. */
-        description?: string;
-        /** Content that should be displayed. Passed to the `CardContent` component. */
-        content?: string;
-        /** Custom class(es) to add to the element. */
-        class?: HTMLAttributes["class"];
-      }
-    >(),
-    { as: "div" }
-  );
+const props = withDefaults(
+  defineProps<
+    PrimitiveProps & {
+      /** Title that should be displayed. Passed to the `CardTitle` component. */
+      title?: string;
+      /** Description that should be displayed. Passed to the `CardDescription` component. */
+      description?: string;
+      /** Content that should be displayed. Passed to the `CardContent` component. */
+      content?: string;
+      /** Custom class(es) to add to the element. */
+      class?: HTMLAttributes["class"];
+    }
+  >(),
+  { as: "div" },
+);
 
-  const styles = tv({
-    base: "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
-  });
+const styles = tv({
+  base: "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+});
 </script>

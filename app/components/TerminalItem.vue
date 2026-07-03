@@ -1,11 +1,11 @@
 <template>
-    <slot />
+  <slot />
 </template>
 <script lang="ts" setup>
 import { ItemIndexKey } from "./Terminal.vue";
 
 const props = defineProps<{
-    index: number;
+  index: number;
 }>();
 
 provide(ItemIndexKey, props.index);

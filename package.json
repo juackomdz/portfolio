@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
-  "type": "module",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxt/fonts": "^0.14.0",
     "@nuxt/icon": "^2.2.3",
+    "@nuxt/image": "^2.0.0",
     "@nuxtjs/color-mode": "^4.0.1",
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/vite": "^4.3.1",
