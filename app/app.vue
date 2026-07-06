@@ -7,13 +7,17 @@
     <SeparatorHero texto="Proyectos" />
     <section>
       <Motion initial="initial" while-in-view="animate" :variants="rootVariant">
-        <Motion
-          v-for="(item, index) in projects"
-          :key="item.title"
-          :variants="childVariant"
-          class="mb-8"
-        >
+        <Motion v-for="(item, index) in projects" :key="item.title" :variants="childVariant" class="mb-8">
           <CardProyectos v-bind="item" />
+        </Motion>
+      </Motion>
+    </section>
+    <SeparatorHero texto="Experiencia" />
+    <section>
+      <Motion initial="initial" while-in-view="animate" :variants="rootVariant">
+        <Motion v-for="(item, index) in experiences" :key="item.company + item.startDate" :variants="childVariant"
+          class="mb-8">
+          <CardExperiencia v-bind="item" />
         </Motion>
       </Motion>
     </section>
@@ -72,7 +76,25 @@ const projects = [
   },
 ];
 
-onMounted(() => {
-  console.log("Projects loaded:", projects.length);
-});
+const experiences = [
+  {
+    position: "Full Stack Developer",
+    company: "OG Consultores",
+    startDate: "2023",
+    endDate: "2025",
+    description:
+      "Desarrollo de aplicaciones web para diferentes clientes, publicos y privados, ademas de explotación de sistema de votaciones C-VOTA.",
+    tags: ["Java", "Spring Boot", "SQL Server", "Bootstrap", "Git", "Docker"],
+  },
+  {
+    position: "Analista Programador",
+    company: "Banco Internacional",
+    startDate: "2021",
+    endDate: "2022",
+    description:
+      "Desarrollo y mantención de modulos en proyecto control de márgenes para sistema bancario e-Ibs. ",
+    tags: ["Java", "Javascript", "Oracle SQL", "e-Ibs", "HTML", "CSS"],
+  },
+];
+
 </script>
