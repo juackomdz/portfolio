@@ -52,7 +52,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: "es" },
-      title: "Joaquin Mendez | Full Stack Developer",
+      title: "Joaquin Mendez Torres | Full Stack Developer",
       meta: [
         {
           content:
@@ -60,7 +60,7 @@ export default defineNuxtConfig({
           name: "description",
         },
         { name: "theme-color", content: "#000000" },
-        { property: "og:title", content: "Joaquin Mendez | Full Stack Developer" },
+        { property: "og:title", content: "Joaquin Mendez Torres | Full Stack Developer" },
         {
           property: "og:description",
           content:
