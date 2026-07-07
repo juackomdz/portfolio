@@ -52,23 +52,23 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: "es" },
-      title: "Joaquin Mendez Torres | Full Stack Developer",
+      title: "Joaquín Méndez Torres | Full Stack Developer",
       meta: [
         {
           content:
-            "Portfolio de Joaquin Mendez, Full Stack Developer especializado en Nuxt, Vue, TypeScript, Java y arquitecturas modernas. Proyectos y experiencia profesional.",
+            "Portafolio de Joaquín Méndez Torres, Full Stack Developer especializado en Nuxt, Vue, TypeScript, Java y arquitecturas modernas. Proyectos y experiencia profesional.",
           name: "description",
         },
         { name: "theme-color", content: "#000000" },
-        { property: "og:title", content: "Joaquin Mendez Torres | Full Stack Developer" },
+        { property: "og:title", content: "Joaquín Méndez Torres | Full Stack Developer" },
         {
           property: "og:description",
           content:
-            "Portfolio de Joaquin Mendez, Full Stack Developer especializado en Nuxt, Vue, TypeScript, Java y arquitecturas modernas. Proyectos y experiencia profesional.",
+            "Portfolio de Joaquín Méndez Torres, Full Stack Developer especializado en Nuxt, Vue, TypeScript, Java y arquitecturas modernas. Proyectos y experiencia profesional.",
         },
         { property: "og:type", content: "website" },
       ],
-      link: [{ rel: "canonical", href: "https://xxxxx.vercel.app" }],
+      link: [{ rel: "canonical", href: "https://joaquin-mendez.vercel.app" }],
     },
   },
 });
