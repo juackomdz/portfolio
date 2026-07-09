@@ -22,7 +22,9 @@
       </Motion>
     </section>
     <Footer />
-    <ChatBot />
+    <ClientOnly>
+      <ChatBot />
+    </ClientOnly>
   </div>
 </template>
 
