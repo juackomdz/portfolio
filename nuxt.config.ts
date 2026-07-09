@@ -4,6 +4,10 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 
+  runtimeConfig: {
+    geminiApiKey: "",
+  },
+
   modules: [
     "@nuxtjs/color-mode",
     "motion-v/nuxt",

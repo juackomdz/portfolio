@@ -22,6 +22,7 @@
       </Motion>
     </section>
     <Footer />
+    <ChatBot />
   </div>
 </template>
 
