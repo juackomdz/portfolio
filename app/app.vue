@@ -1,3 +1,4 @@
+<!--
 <template>
   <div>
     <NuxtRouteAnnouncer />
@@ -5,7 +6,7 @@
     <Hero />
     <DocsTerminal class="mb-3" />
     <SeparatorHero texto="Proyectos" />
-    <section>
+    <section class="space-y-8">
       <Motion initial="initial" while-in-view="animate" :variants="rootVariant">
         <Motion v-for="(item, index) in projects" :key="item.title" :variants="childVariant" class="mb-8">
           <CardProyectos v-bind="item" />
@@ -13,7 +14,7 @@
       </Motion>
     </section>
     <SeparatorHero texto="Experiencia" />
-    <section>
+    <section class="space-y-8">
       <Motion initial="initial" while-in-view="animate" :variants="rootVariant">
         <Motion v-for="(item, index) in experiences" :key="item.company + item.startDate" :variants="childVariant"
           class="mb-8">
@@ -101,3 +102,7 @@ const experiences = [
 ];
 
 </script>
+-->
+<template>
+  <Portfolio />
+</template>

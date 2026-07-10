@@ -8,32 +8,11 @@ export default defineNuxtConfig({
     geminiApiKey: "",
   },
 
-  modules: [
-    "@nuxtjs/color-mode",
-    "motion-v/nuxt",
-    "@vueuse/nuxt",
-    "@nuxt/icon",
-    "@nuxt/fonts",
-    "@nuxt/image",
-  ],
+  modules: ["@nuxtjs/color-mode", "motion-v/nuxt", "@vueuse/nuxt", "@nuxt/icon", "@nuxt/fonts", "@nuxt/image", "shadcn-nuxt"],
 
-  imports: {
-    imports: [
-      {
-        from: "tailwind-variants",
-        name: "tv",
-      },
-      {
-        from: "tailwind-variants",
-        name: "VariantProps",
-        type: true,
-      },
-    ],
-  },
-
-  colorMode: {
-    storageKey: "portfolio-color-mode",
-    classSuffix: "",
+  shadcn: {
+    prefix: '',
+    componentDir: './components/ui'
   },
 
   icon: {

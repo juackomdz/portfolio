@@ -87,25 +87,25 @@ async function sendMessage() {
       >
         <div
           v-show="isOpen"
-          class="bg-card border-border mb-4 flex h-[500px] w-[360px] flex-col overflow-hidden rounded-2xl border shadow-xl"
+          class="bg-card border-3 border-black brutal-shadow-lg mb-4 flex h-[500px] w-[360px] flex-col overflow-hidden rounded-none"
         >
           <!-- Header -->
           <div
-            class="bg-card flex items-center justify-between border-b px-5 py-4"
+            class="bg-card flex items-center justify-between border-b-2 border-black px-5 py-4"
           >
             <div class="flex items-center gap-3">
               <div
-                class="bg-primary/10 text-primary flex size-9 items-center justify-center rounded-full"
+                class="bg-primary/10 text-primary flex size-9 items-center justify-center border-2 border-black"
               >
                 <Icon name="lucide:bot" class="size-5" />
               </div>
               <div>
-                <p class="text-foreground text-sm font-semibold">Asistente</p>
+                <p class="text-foreground text-sm font-bold">Asistente</p>
                 <p class="text-muted-foreground text-xs">En línea</p>
               </div>
             </div>
             <button
-              class="text-muted-foreground hover:text-foreground flex size-8 items-center justify-center rounded-full transition-colors"
+              class="text-muted-foreground hover:text-foreground flex size-8 items-center justify-center border-2 border-black transition-colors hover:translate-x-0.5 hover:translate-y-0.5 hover:brutal-shadow-offset"
               @click="toggleChat"
             >
               <Icon name="lucide:x" class="size-4" />
@@ -125,16 +125,16 @@ async function sendMessage() {
             >
               <div
                 v-if="msg.role === 'bot'"
-                class="bg-primary/10 text-foreground mr-3 flex size-7 shrink-0 items-center justify-center rounded-full self-end"
+                class="bg-primary/10 text-foreground mr-3 flex size-7 shrink-0 items-center justify-center border-2 border-black self-end"
               >
                 <Icon name="lucide:bot" class="size-3.5 text-primary" />
               </div>
               <div
-                class="max-w-[75%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed"
+                class="max-w-[75%] border-2 border-black px-4 py-2.5 text-sm leading-relaxed"
                 :class="
                   msg.role === 'user'
-                    ? 'bg-primary text-primary-foreground rounded-br-md'
-                    : 'bg-muted text-foreground rounded-bl-md'
+                    ? 'bg-primary text-primary-foreground translate-x-1 translate-y-1'
+                    : 'bg-muted text-foreground'
                 "
               >
                 {{ msg.text }}
@@ -144,17 +144,17 @@ async function sendMessage() {
             <!-- Typing Indicator -->
             <div v-if="isLoading" class="flex justify-start">
               <div
-                class="bg-primary/10 text-foreground mr-3 flex size-7 shrink-0 items-center justify-center rounded-full self-end"
+                class="bg-primary/10 text-foreground mr-3 flex size-7 shrink-0 items-center justify-center border-2 border-black self-end"
               >
                 <Icon name="lucide:bot" class="size-3.5 text-primary" />
               </div>
               <div
-                class="bg-muted text-foreground rounded-2xl rounded-bl-md px-4 py-3"
+                class="bg-muted text-foreground border-2 border-black px-4 py-3 translate-x-1 translate-y-1"
               >
                 <div class="flex items-center gap-1.5">
-                  <span class="bg-muted-foreground size-1.5 animate-bounce rounded-full [animation-delay:0ms]" />
-                  <span class="bg-muted-foreground size-1.5 animate-bounce rounded-full [animation-delay:150ms]" />
-                  <span class="bg-muted-foreground size-1.5 animate-bounce rounded-full [animation-delay:300ms]" />
+                  <div class="bg-muted-foreground size-2 animate-bounce rounded-full [animation-delay:0ms]" />
+                  <div class="bg-muted-foreground size-2 animate-bounce rounded-full [animation-delay:150ms]" />
+                  <div class="bg-muted-foreground size-2 animate-bounce rounded-full [animation-delay:300ms]" />
                 </div>
               </div>
             </div>
@@ -162,24 +162,26 @@ async function sendMessage() {
 
           <!-- Input -->
           <form
-            class="border-border flex items-center gap-2 border-t px-4 py-3"
+            class="border-t-2 border-black px-4 py-3"
             @submit.prevent="sendMessage"
           >
-            <input
-              ref="inputRef"
-              v-model="input"
-              type="text"
-              placeholder="Escribe tu pregunta..."
-              class="form-input bg-background text-foreground placeholder:text-muted-foreground border-border focus:ring-ring w-full rounded-xl border px-4 py-2.5 text-sm outline-none focus:ring-2"
-              :disabled="isLoading"
-            />
-            <button
-              type="submit"
-              :disabled="!input.trim() || isLoading"
-              class="bg-primary text-primary-foreground hover:bg-primary/90 flex size-10 shrink-0 items-center justify-center rounded-xl transition-colors disabled:opacity-50"
-            >
-              <Icon name="lucide:send-horizontal" class="size-4" />
-            </button>
+            <div class="flex items-center gap-2">
+              <input
+                ref="inputRef"
+                v-model="input"
+                type="text"
+                placeholder="Escribe tu pregunta..."
+                class="form-input bg-background text-foreground placeholder:text-muted-foreground border-2 border-black brutal-shadow-sm w-full px-4 py-2.5 text-sm outline-none focus:brutal-shadow-offset"
+                :disabled="isLoading"
+              />
+              <button
+                type="submit"
+                :disabled="!input.trim() || isLoading"
+                class="bg-primary text-primary-foreground border-2 border-black brutal-shadow-sm flex size-10 shrink-0 items-center justify-center hover:translate-x-1 hover:translate-y-1 hover:brutal-shadow-offset disabled:opacity-50"
+              >
+                <Icon name="lucide:send-horizontal" class="size-4" />
+              </button>
+            </div>
           </form>
         </div>
       </Transition>
@@ -195,7 +197,7 @@ async function sendMessage() {
         }"
       >
         <button
-          class="bg-primary text-primary-foreground shadow-lg flex size-14 items-center justify-center rounded-full transition-shadow hover:shadow-xl"
+          class="bg-primary text-primary-foreground border-3 border-black brutal-shadow-lg flex size-14 items-center justify-center hover:translate-x-1 hover:translate-y-1 hover:brutal-shadow-offset"
           @click="toggleChat"
         >
           <Icon name="lucide:message-circle" class="size-6" />
