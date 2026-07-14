@@ -2,77 +2,38 @@
 import { ref } from 'vue'
 import {
     ArrowRight,
-    Mail,
     Briefcase,
-    Code2,
-    Palette,
-    Smartphone,
     ExternalLink,
-    MapPin,
     Star,
 } from '@lucide/vue'
-import {
-    Button,
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-    Badge,
-    Input,
-    Textarea,
-    Sticker,
-    BurstShape,
-    Star5Shape,
-    HeartShape,
-} from '~~/components/ui'
+import Button from '@/components/ui/Button.vue'
+import Card from '@/components/ui/Card.vue'
+import CardContent from '@/components/ui/CardContent.vue'
+import CardDescription from '@/components/ui/CardDescription.vue'
+import CardHeader from '@/components/ui/CardHeader.vue'
+import CardTitle from '@/components/ui/CardTitle.vue'
+import Badge from '@/components/ui/Badge.vue'
+import BurstShape from '@/components/ui/shapes/BurstShape.vue'
+import Star5Shape from '@/components/ui/shapes/Star5Shape.vue'
+import HeartShape from '@/components/ui/shapes/HeartShape.vue'
+
 
 // Portfolio data - customize for your own portfolio
 const portfolioData = {
-    name: 'Alex Johnson',
-    title: 'UI/UX Designer & Developer',
-    tagline: 'I Turn Ideas Into',
-    taglineHighlight: 'Realities',
+    name: 'Joaquin Mendez',
+    title: 'Full stack Developer',
+    tagline: 'Convirtiendo ideas en',
+    taglineHighlight: 'Realidad',
     description:
-        'I am a UI/UX designer with a passion for crafting performant, scalable, and user-friendly interfaces that make a real impact.',
-    email: 'hello@alexjohnson.dev',
-    location: 'San Francisco, CA',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
+        'Desarrollador Full Stack con experiencia creando soluciones escalables y optimizadas con un impacto real.',
+    email: 'joaquin.enmt@gmail.com',
+    location: 'Santiago, Chile',
     resumeUrl: '#',
     social: {
-        github: 'https://github.com',
-        linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com',
+        github: 'https://github.com/juackomdz',
+        linkedin: 'https://www.linkedin.com/in/joaquín-méndez-torres-5400a41a2/',
     },
 }
-
-interface Service {
-    icon: 'code' | 'smartphone' | 'palette'
-    title: string
-    description: string
-    color: string
-}
-
-const services: Service[] = [
-    {
-        icon: 'code',
-        title: 'Web Development',
-        description: 'Building modern web applications with React, Next.js, and Tailwind CSS.',
-        color: 'bg-primary',
-    },
-    {
-        icon: 'smartphone',
-        title: 'Mobile Development',
-        description: 'Creating cross-platform mobile apps with React Native and Flutter.',
-        color: 'bg-secondary',
-    },
-    {
-        icon: 'palette',
-        title: 'UI/UX Design',
-        description: 'Designing intuitive interfaces that prioritize user experience and accessibility.',
-        color: 'bg-accent',
-    },
-]
 
 interface Experience {
     year: string
@@ -84,25 +45,18 @@ interface Experience {
 
 const experience: Experience[] = [
     {
-        year: '2024',
-        title: 'Senior Product Designer',
-        company: 'TechCorp Inc.',
-        description: 'Leading design initiatives and mentoring junior designers.',
+        year: '2023 - 2025',
+        title: 'Full Stack Developer',
+        company: 'OG Consultores',
+        description: 'Desarrollo de aplicaciones web para diferentes clientes, publicos y privados, ademas de explotación de sistema de votaciones C-VOTA.',
         color: 'bg-primary',
     },
     {
-        year: '2022',
-        title: 'Product Designer',
-        company: 'StartupXYZ',
-        description: 'Contributed to product growth reaching 10M+ users.',
+        year: '2021 - 2022',
+        title: 'Analista Desarrollador',
+        company: 'Banco Internacional',
+        description: 'Desarrollo y mantención de modulos en proyecto control de márgenes para sistema bancario e-Ibs.',
         color: 'bg-secondary',
-    },
-    {
-        year: '2020',
-        title: 'UI/UX Designer',
-        company: 'DesignStudio',
-        description: 'Created design systems for enterprise clients.',
-        color: 'bg-accent',
     },
 ]
 
@@ -118,31 +72,22 @@ interface Project {
 
 const projects: Project[] = [
     {
-        title: 'E-commerce Platform Redesign',
-        category: 'Web Design',
+        title: 'Offline Attendance',
+        category: 'Saas',
         description: 'Complete redesign of a major e-commerce platform, resulting in 40% increase in conversions.',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
-        tags: ['Figma', 'React', 'Tailwind'],
+        image: 'https://images.unsplash.com/photo-1531973576160-7125cd663d86?q=80&w=600&h=400&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        tags: ['Nuxt', 'Drizzle', 'Zod', 'Tanstack Form', 'TailwindCSS'],
         color: 'bg-success',
-        link: '#',
+        link: 'https://offline-attendance.vercel.app',
     },
     {
-        title: 'Mobile Banking App',
-        category: 'Mobile Design',
-        description: 'Designed a user-friendly mobile banking experience for over 5M users.',
+        title: 'Loteria',
+        category: 'Design',
+        description: 'Juego de loteria web con validaciones hecho con vue.',
         image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop',
-        tags: ['Figma', 'React Native', 'iOS'],
+        tags: ['Vue', 'Typescript', 'Shadcn UI'],
         color: 'bg-info',
-        link: '#',
-    },
-    {
-        title: 'SaaS Dashboard',
-        category: 'Product Design',
-        description: 'Created a comprehensive analytics dashboard for a B2B SaaS platform.',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-        tags: ['Design System', 'React', 'D3.js'],
-        color: 'bg-warning',
-        link: '#',
+        link: 'https://loteria-azure-sigma.vercel.app',
     },
 ]
 
@@ -153,19 +98,6 @@ interface Testimonial {
     color: string
 }
 
-const formName = ref('')
-const formEmail = ref('')
-const formSubject = ref('')
-const formMessage = ref('')
-
-function handleContactSubmit() {
-    console.log('Contact form submitted:', {
-        name: formName.value,
-        email: formEmail.value,
-        subject: formSubject.value,
-        message: formMessage.value,
-    })
-}
 
 const testimonials: Testimonial[] = [
     {
@@ -199,10 +131,8 @@ const testimonials: Testimonial[] = [
                     <span class="font-black text-xl uppercase">{{ portfolioData.name.split(' ')[0] }}</span>
                 </div>
                 <div class="hidden md:flex items-center gap-6">
-                    <a href="#services" class="font-bold hover:text-primary transition-colors">Services</a>
-                    <a href="#experience" class="font-bold hover:text-primary transition-colors">Experience</a>
-                    <a href="#projects" class="font-bold hover:text-primary transition-colors">Projects</a>
-                    <a href="#contact" class="font-bold hover:text-primary transition-colors">Contact</a>
+                    <a href="#experience" class="font-bold hover:text-primary transition-colors">Experiencia</a>
+                    <a href="#projects" class="font-bold hover:text-primary transition-colors">Proyectos</a>
                 </div>
                 <Button>Hire Me</Button>
             </div>
@@ -239,69 +169,25 @@ const testimonials: Testimonial[] = [
                                 Get In Touch
                                 <ArrowRight class="h-5 w-5" />
                             </Button>
-                            <Button size="lg" variant="outline">View Resume</Button>
-                        </div>
-                    </div>
-
-                    <div class="relative">
-                        <div class="relative w-full max-w-md mx-auto">
-                            <div
-                                class="border-3 border-foreground shadow-[8px_8px_0px_hsl(var(--shadow-color))] overflow-hidden bg-muted">
-                                <img :src="portfolioData.avatar" :alt="portfolioData.name"
-                                    class="w-full aspect-square object-cover" />
-                            </div>
-                            <Sticker variant="primary" rotation="medium-right" class="absolute -top-4 -right-4 z-10">
-                                Hire Me!
-                            </Sticker>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section id="services" class="py-20 border-b-3 border-foreground bg-muted/30">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <Badge variant="outline" class="mb-4">Services</Badge>
-                    <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight">What I Do</h2>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-6">
-                    <Card v-for="service in services" :key="service.title"
-                        class="group hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[8px_8px_0px_hsl(var(--shadow-color))] transition-all">
-                        <CardHeader :class="service.color">
-                            <div
-                                class="w-14 h-14 flex items-center justify-center bg-background border-3 border-foreground mb-4 shadow-[3px_3px_0px_hsl(var(--shadow-color))]">
-                                <Code2 v-if="service.icon === 'code'" class="h-6 w-6" />
-                                <Smartphone v-else-if="service.icon === 'smartphone'" class="h-6 w-6" />
-                                <Palette v-else-if="service.icon === 'palette'" class="h-6 w-6" />
-                            </div>
-                            <CardTitle class="uppercase">{{ service.title }}</CardTitle>
-                        </CardHeader>
-                        <CardContent class="pt-4">
-                            <CardDescription class="text-foreground/70">{{ service.description }}</CardDescription>
-                        </CardContent>
-                    </Card>
-                </div>
-            </div>
-        </section>
 
         <!-- Experience Section -->
         <section id="experience" class="py-20 border-b-3 border-foreground">
             <div class="container mx-auto px-4">
                 <div class="grid lg:grid-cols-2 gap-12 items-start">
                     <div>
-                        <Badge variant="outline" class="mb-4">Experience</Badge>
+                        <Badge variant="outline" class="mb-4">Experiencia</Badge>
                         <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight mb-6">My Journey</h2>
                         <p class="text-lg text-muted-foreground mb-8">
-                            Over the years, I've had the privilege of working with amazing teams
-                            and building products that impact millions of users.
+                            Por los años, he tenido la oportunidad de trabajar en diferentes equipos construyendo
+                            productos que generen impacto desde el minuto 1.
+
                         </p>
-                        <Button variant="outline" class="gap-2">
-                            Download Resume
-                            <ArrowRight class="h-4 w-4" />
-                        </Button>
                     </div>
 
                     <div class="space-y-6">
@@ -335,9 +221,9 @@ const testimonials: Testimonial[] = [
             <div class="container mx-auto px-4">
                 <div class="text-center mb-12">
                     <Badge variant="outline" class="mb-4">Portfolio</Badge>
-                    <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight mb-4">Featured Projects</h2>
+                    <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight mb-4">Proyectos</h2>
                     <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-                        A selection of my recent work across web, mobile, and product design.
+                        Algunos proyectos hechos con tecnologias modernas.
                     </p>
                 </div>
 
@@ -361,10 +247,12 @@ const testimonials: Testimonial[] = [
                                 <div class="flex flex-wrap gap-2 mb-6">
                                     <Badge v-for="tag in project.tags" :key="tag" variant="secondary">{{ tag }}</Badge>
                                 </div>
-                                <Button class="w-fit gap-2">
-                                    View Project
-                                    <ExternalLink class="h-4 w-4" />
-                                </Button>
+                                <NuxtLink :to="project.link">
+                                    <Button class="w-fit gap-2">
+                                        View Project
+                                        <ExternalLink class="h-4 w-4" />
+                                    </Button>
+                                </NuxtLink>
                             </div>
                         </div>
                     </Card>
@@ -376,8 +264,8 @@ const testimonials: Testimonial[] = [
         <section class="py-20 border-b-3 border-foreground">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-12">
-                    <Badge variant="outline" class="mb-4">Testimonials</Badge>
-                    <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight">What Clients Say</h2>
+                    <Badge variant="outline" class="mb-4">Testimonios</Badge>
+                    <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight">Que dicen de mi.</h2>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-6">
@@ -406,62 +294,6 @@ const testimonials: Testimonial[] = [
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-primary">
-            <div class="container mx-auto px-4">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight mb-4">Let's Work Together
-                        </h2>
-                        <p class="text-lg mb-6 text-primary-foreground/80">
-                            Have a project in mind? I'd love to hear about it. Drop me a message
-                            and let's create something amazing together.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="w-10 h-10 bg-background border-3 border-foreground flex items-center justify-center">
-                                    <Mail class="h-5 w-5" />
-                                </div>
-                                <a :href="`mailto:${portfolioData.email}`" class="font-medium hover:underline">
-                                    {{ portfolioData.email }}
-                                </a>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="w-10 h-10 bg-background border-3 border-foreground flex items-center justify-center">
-                                    <MapPin class="h-5 w-5" />
-                                </div>
-                                <span class="font-medium">{{ portfolioData.location }}</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <Card class="bg-background">
-                        <CardHeader>
-                            <CardTitle>Send a Message</CardTitle>
-                            <CardDescription>Fill out the form below and I'll get back to you within 24 hours.
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent class="space-y-4">
-                            <form @submit.prevent="handleContactSubmit" class="space-y-4">
-                                <div class="grid sm:grid-cols-2 gap-4">
-                                    <Input v-model="formName" placeholder="Your Name" />
-                                    <Input v-model="formEmail" placeholder="Your Email" type="email" />
-                                </div>
-                                <Input v-model="formSubject" placeholder="Subject" />
-                                <Textarea v-model="formMessage" placeholder="Tell me about your project..."
-                                    class="min-h-[120px]" />
-                                <Button type="submit" class="w-full gap-2">
-                                    Send Message
-                                    <ArrowRight class="h-4 w-4" />
-                                </Button>
-                            </form>
-                        </CardContent>
-                    </Card>
-                </div>
-            </div>
-        </section>
 
         <!-- Footer -->
         <footer class="py-8 bg-foreground text-background border-t-3 border-foreground">
@@ -482,10 +314,6 @@ const testimonials: Testimonial[] = [
                         <a :href="portfolioData.social.linkedin" target="_blank" rel="noopener noreferrer"
                             aria-label="LinkedIn" class="text-background/70 hover:text-background transition-colors">
                             LinkedIn
-                        </a>
-                        <a :href="portfolioData.social.twitter" target="_blank" rel="noopener noreferrer"
-                            aria-label="Twitter" class="text-background/70 hover:text-background transition-colors">
-                            Twitter
                         </a>
                     </div>
                 </div>

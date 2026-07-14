@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     geminiApiKey: "",
   },
 
-  modules: ["@nuxtjs/color-mode", "motion-v/nuxt", "@vueuse/nuxt", "@nuxt/icon", "@nuxt/fonts", "@nuxt/image", "shadcn-nuxt"],
+  modules: ["motion-v/nuxt", "@vueuse/nuxt", "@nuxt/icon", "@nuxt/fonts", "@nuxt/image", "shadcn-nuxt"],
 
   shadcn: {
     prefix: '',
