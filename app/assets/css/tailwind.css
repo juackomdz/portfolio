@@ -57,7 +57,6 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  
   /* BoldKit Motion System — L1 Tokens (framework-agnostic, --bk-* namespace).
      The snap duration/easing back the .bk-interactive transition used by the
      core interactive components (Button, Card, Input, Toggle, Switch). */
@@ -221,4 +220,17 @@
   --clash-2: 280 70% 55%;
   --clash-3: 165 80% 50%;
   --clash-4: 45 95% 60%;
+}
+
+@theme inline {
+  --font-heading: var(--font-sans);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import {
     ArrowRight,
     Briefcase,
@@ -16,6 +15,7 @@ import Badge from '@/components/ui/Badge.vue'
 import BurstShape from '@/components/ui/shapes/BurstShape.vue'
 import Star5Shape from '@/components/ui/shapes/Star5Shape.vue'
 import HeartShape from '@/components/ui/shapes/HeartShape.vue'
+import DotWave from '@/components/ui/canvas-effects/DotWave.vue'
 
 
 // Portfolio data - customize for your own portfolio
@@ -101,21 +101,21 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
     {
-        quote: "Alex's work completely transformed our product. Their attention to detail and user-centric approach is unmatched.",
-        author: 'Sarah Chen',
-        role: 'CEO, TechStartup',
+        quote: "Ha sido una experiencia increible trabajar con joaquín. Antes haciamos todo a lapiz y papel.",
+        author: 'Juan Perez',
+        role: 'Product Owner, FakeCorp',
         color: 'bg-accent',
     },
     {
-        quote: "One of the most talented designers I've worked with. They deliver exceptional results consistently.",
-        author: 'Michael Brown',
-        role: 'Product Lead, BigCorp',
+        quote: "Joaquín es un desarrollador con un gran talento. Consiguió hacer la app tal cual como me la imaginaba",
+        author: 'Tony Stark',
+        role: 'CEO, Stark Industries',
         color: 'bg-success',
     },
     {
-        quote: 'Working with Alex was a game-changer for our team. Highly recommend for any design project.',
-        author: 'Emily Davis',
-        role: 'Founder, DesignCo',
+        quote: 'Trabajar con joaquín es una brisa de aire fresco. Altamente recomendado.',
+        author: 'Homero Simpson',
+        role: 'Operator, Springfield Nuclear Plant',
         color: 'bg-primary',
     },
 ]
@@ -141,17 +141,19 @@ const testimonials: Testimonial[] = [
         <!-- Hero Section -->
         <section class="relative overflow-hidden border-b-3 border-foreground">
             <div class="absolute inset-0 grid-pattern opacity-30" />
+            <!--<MouseRipple color="#0B056B" :speed="0.2" class="absolute inset-0" />-->
+            <DotWave :speed="0.25" color="#4BCCE3" :gap="50" class="absolute inset-0" />
             <BurstShape :size="120"
                 class="absolute top-10 right-10 text-accent hidden lg:block animate-[brutal-wiggle_3s_ease-in-out_infinite]" />
             <Star5Shape :size="80" class="absolute bottom-20 left-20 text-secondary hidden lg:block" />
 
             <div class="container mx-auto px-4 py-20 md:py-32 relative">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
+                <div class="flex justify-center">
+                    <div class="text-center max-w-2xl">
                         <Badge variant="secondary" class="mb-6 shadow-[3px_3px_0px_hsl(var(--shadow-color))]">
                             <span class="flex items-center gap-1">
                                 <span class="w-2 h-2 bg-success rounded-full animate-pulse" />
-                                Available for work
+                                Disponibilidad Inmediata
                             </span>
                         </Badge>
                         <h1 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight mb-6">
@@ -161,14 +163,16 @@ const testimonials: Testimonial[] = [
                                 {{ portfolioData.taglineHighlight }}
                             </span>
                         </h1>
-                        <p class="text-xl text-muted-foreground mb-8 max-w-lg">
+                        <p class="text-xl text-muted-foreground mb-8 max-w-lg text-center mx-auto">
                             {{ portfolioData.description }}
                         </p>
-                        <div class="flex flex-wrap gap-4">
-                            <Button size="lg" class="gap-2" animation="pulse">
-                                Get In Touch
-                                <ArrowRight class="h-5 w-5" />
-                            </Button>
+                        <div class="flex flex-wrap gap-4 justify-center">
+                            <NuxtLink to="mailto:joaquin.enmt@gmail.com">
+                                <Button size="lg" class="gap-2" animation="pulse">
+                                    Contactame
+                                    <ArrowRight class="h-5 w-5" />
+                                </Button>
+                            </NuxtLink>
                         </div>
                     </div>
                 </div>
@@ -182,7 +186,7 @@ const testimonials: Testimonial[] = [
                 <div class="grid lg:grid-cols-2 gap-12 items-start">
                     <div>
                         <Badge variant="outline" class="mb-4">Experiencia</Badge>
-                        <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight mb-6">My Journey</h2>
+                        <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight mb-6">Trabajos</h2>
                         <p class="text-lg text-muted-foreground mb-8">
                             Por los años, he tenido la oportunidad de trabajar en diferentes equipos construyendo
                             productos que generen impacto desde el minuto 1.
@@ -319,5 +323,6 @@ const testimonials: Testimonial[] = [
                 </div>
             </div>
         </footer>
+        <ChatBot />
     </div>
 </template>
