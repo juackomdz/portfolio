@@ -44,9 +44,6 @@ export default defineEventHandler(async (event) => {
     history: chatHistory
   })
 
-  const model = genAI.models.list
-
-  console.log(model)
   try {
     const result = await chat.sendMessage({ message })
     const response = result.text
