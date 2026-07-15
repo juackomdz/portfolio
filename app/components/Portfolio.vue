@@ -197,8 +197,7 @@ const testimonials: Testimonial[] = [
                     <div class="space-y-6">
                         <div v-for="exp in experience" :key="exp.year"
                             class="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-1 before:bg-foreground">
-                            <div
-                                :class="['absolute left-[-6px] top-0 w-4 h-4 border-3 border-foreground', exp.color]" />
+                            <div :class="['absolute left-1.5 top-0 w-4 h-4 border-3 border-foreground', exp.color]" />
                             <Card>
                                 <CardHeader class="pb-2">
                                     <div class="flex items-center gap-2 mb-1">
