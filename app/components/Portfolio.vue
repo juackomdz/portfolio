@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { portfolioData, experience, projects, testimonials } from '#shared/data'
+import { portfolioData, experience, projects, testimonials } from '@/utils/data'
 
 </script>
 
