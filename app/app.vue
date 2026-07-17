@@ -1,3 +1,5 @@
 <template>
-  <Portfolio />
+  <ClientOnly>
+    <Portfolio />
+  </ClientOnly>
 </template>
