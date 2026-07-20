@@ -50,7 +50,7 @@ defineProps<{
                             </div>
                             <NuxtLink :to="project.link">
                                 <Button class="w-fit gap-2">
-                                    View Project
+                                    Ver proyecto
                                     <ExternalLink class="h-4 w-4" />
                                 </Button>
                             </NuxtLink>

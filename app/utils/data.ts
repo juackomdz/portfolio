@@ -37,7 +37,7 @@ export const projects: Project[] = [
     {
         title: 'Offline Attendance',
         category: 'Saas',
-        description: 'Complete redesign of a major e-commerce platform, resulting in 40% increase in conversions.',
+        description: 'Sistema de registro de asistencia offline-first. Con validaciones de rut y sincronización de datos al recuperar la conexión.',
         image: 'https://images.unsplash.com/photo-1531973576160-7125cd663d86?q=80&w=600&h=400&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         tags: ['Nuxt', 'Drizzle', 'Zod', 'Tanstack Form', 'TailwindCSS'],
         color: 'bg-success',
