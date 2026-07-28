@@ -1,6 +1,5 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp'
 import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp'
-import { isInitializeRequest } from '@modelcontextprotocol/sdk/types'
 import { portfolioKnowledge } from '../utils/portfolio-knowledge'
 import { z } from 'zod'
 
@@ -62,32 +61,17 @@ server.registerTool('query-knowledge', {
     }
 })
 
-const transports = new Map<string, WebStandardStreamableHTTPServerTransport>()
-
 export default defineEventHandler(async (event) => {
-    const sessionId = getHeader(event, 'mcp-session-id')
-
     let parsedBody: unknown
     if (event.method === 'POST') {
         parsedBody = await readBody(event)
     }
 
-    let transport: WebStandardStreamableHTTPServerTransport
-
-    if (sessionId && transports.has(sessionId)) {
-        transport = transports.get(sessionId)!
-    } else if (!sessionId && parsedBody && isInitializeRequest(parsedBody)) {
-        transport = new WebStandardStreamableHTTPServerTransport({
-            sessionIdGenerator: () => crypto.randomUUID(),
-            onsessioninitialized: (id) => { transports.set(id, transport) },
-        })
-        transport.onclose = () => {
-            if (transport.sessionId) transports.delete(transport.sessionId)
-        }
-        await server.connect(transport)
-    } else {
-        throw createError({ statusCode: 400, statusMessage: 'Invalid or missing MCP session' })
-    }
+    const transport = new WebStandardStreamableHTTPServerTransport({
+        sessionIdGenerator: undefined,
+    })
+    await server.close()
+    await server.connect(transport)
 
     const request = toWebRequest(event)
     const response = await transport.handleRequest(request, { parsedBody })
