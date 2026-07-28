@@ -1,75 +1,61 @@
-# Nuxt Minimal Starter
+# Portfolio — Joaquín Méndez Torres
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Sitio web personal de presentación profesional. Aplicación de una sola página con secciones de experiencia, proyectos, testimonios y un chatbot impulsado por Gemini AI.
 
-## Setup
+**En vivo:** https://joaquin-mendez.vercel.app
 
-Make sure to install dependencies:
+## Stack
+
+- **Framework:** [Nuxt 4](https://nuxt.com) + Vue 3
+- **Estilos:** [Tailwind CSS v4](https://tailwindcss.com) con estética neubrutalism
+- **Componentes:** [shadcn-vue](https://www.shadcn-vue.com/) (New York style)
+- **Animaciones:** [Motion](https://motion.dev) (motion-v)
+- **Modo oscuro:** `@nuxtjs/color-mode`
+- **Despliegue:** [Vercel](https://vercel.com)
+
+## Estructura
+
+```
+app/
+  app.vue              ← punto de entrada (solo <Portfolio />)
+  components/
+    Portfolio.vue      ← compone todas las secciones
+    Hero.vue           ← sección principal
+    Navigation.vue     ← barra de navegación
+    Experience.vue     ← experiencia profesional
+    Projects.vue       ← proyectos destacados
+    Testimonial.vue    ← testimonios
+    ChatBot.vue        ← chatbot con Gemini AI
+    Footer.vue         ← pie de página
+    ui/                ← componentes shadcn-vue
+  lib/utils.ts         ← utilidad cn() (clsx + tailwind-merge)
+  utils/
+    data.ts            ← datos del portafolio
+    types.ts           ← tipos compartidos
+  assets/css/
+    tailwind.css       ← tema BoldKit (colores HSL, modo oscuro)
+```
+
+## Instalación
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+> Después de agregar/quitar dependencias, ejecuta `npm run postinstall` para regenerar los tipos de Nuxt.
 
-Start the development server on `http://localhost:3000`:
+## Desarrollo
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+El servidor de desarrollo arranca en `http://localhost:3000`.
 
-Build the application for production:
+## Build
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+npm run build      # build de producción
+npm run generate   # exportación estática
+npm run preview    # vista previa del build
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
