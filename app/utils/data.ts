@@ -35,6 +35,16 @@ export const experience: Experience[] = [
 
 export const projects: Project[] = [
     {
+        title: 'Agent Job',
+        category: 'AI Agent',
+        description: 'Agente de IA, local-first, pensado para la busqueda de empleo en el mercado laboral chileno.',
+        image: 'https://plus.unsplash.com/premium_photo-1725985758251-b49c6b581d17?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
+        color: 'bg-teal-500',
+        tags: ['Tanstack AI', 'AI', 'Agents', 'Tool Calling', 'MCP'],
+        link: 'https://github.com/juackomdz/agent-job',
+
+    },
+    {
         title: 'Offline Attendance',
         category: 'Saas',
         description: 'Sistema de registro de asistencia offline-first. Con validaciones de rut y sincronización de datos al recuperar la conexión.',
